@@ -104,8 +104,8 @@
   /* hero — video, centered, no buttons */
   .hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
   .hero-bg{position:absolute;top:-12%;left:0;right:0;height:124%;background:linear-gradient(160deg,#27343a,#46585c);will-change:transform}
-  .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,15,.5) 0%,rgba(20,18,15,.2) 42%,rgba(20,18,15,.6) 100%)}
+  .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hero-bg::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(20,18,15,.5) 0%,rgba(20,18,15,.2) 42%,rgba(20,18,15,.6) 100%)}
   .hero-inner{position:relative;z-index:2;color:#fff;padding-top:90px;display:flex;flex-direction:column;align-items:center}
   .hero .eyebrow{color:#e7c98a}
   .hero .eyebrow::before,.hero .eyebrow.c::after{background:#e7c98a;opacity:.85}
@@ -380,10 +380,12 @@
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-bg" id="heroBg">
-    <!-- Swap the <source> with your own footage. Poster shows until the video loads / if it can't. -->
-    <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+    <!-- OFFLINE VIDEO: put vid.mp4 in the SAME folder as this HTML file in your repo.
+         "muted" + "playsinline" = it autoplays silently on desktop AND mobile.
+         The poster image shows while the video loads, or if the file is missing. -->
+    <video class="hero-video" autoplay muted loop playsinline preload="auto"
            poster="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=80">
-      <source src="https://assets.mixkit.co/videos/preview/mixkit-waves-coming-to-the-shore-of-a-beach-1196-large.mp4" type="video/mp4" />
+      <source src="vid.mp4" type="video/mp4" />
     </video>
   </div>
   <div class="hero-inner wrap">
@@ -662,6 +664,11 @@
 <script>
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const header = document.getElementById('header');
+  const heroVid = document.querySelector('.hero-video');
+  if (heroVid) {
+    if (reduce) { heroVid.removeAttribute('autoplay'); heroVid.pause(); }
+    else { heroVid.muted = true; const pr = heroVid.play(); if (pr && pr.catch) pr.catch(() => {}); }
+  }
 
   window.addEventListener('load', () => document.body.classList.add('loaded'));
   setTimeout(() => document.body.classList.add('loaded'), 700);
