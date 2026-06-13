@@ -78,10 +78,28 @@
   body.menu-open .nav-toggle span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
   body.menu-open .nav-toggle span:nth-child(2){opacity:0}
   body.menu-open .nav-toggle span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-  .mobile-menu{position:fixed;inset:0;z-index:55;background:var(--paper);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.4rem;opacity:0;visibility:hidden;transition:opacity .4s ease}
+  .mobile-menu{position:fixed;inset:0;z-index:55;background:var(--paper);display:flex;flex-direction:column;justify-content:space-between;gap:2rem;padding:104px var(--gutter) 40px;opacity:0;visibility:hidden;transition:opacity .4s ease;overflow-y:auto}
   .mobile-menu.open{opacity:1;visibility:visible}
-  .mobile-menu a{font-family:"Fraunces";font-size:1.9rem;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
-  .mobile-menu .btn{margin-top:1rem}
+  .mm-links{display:flex;flex-direction:column}
+  .mm-links a{font-family:"Fraunces";font-weight:400;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(1.9rem,8.5vw,2.7rem);line-height:1.1;color:var(--ink);padding:.7rem 0;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+  .mm-links a::after{content:"→";font-family:"Hanken Grotesk";font-size:1rem;color:var(--ember);opacity:.3;transition:opacity .3s ease,transform .3s ease}
+  .mm-links a:active::after{opacity:1;transform:translateX(4px)}
+  .mm-foot{display:flex;flex-direction:column;gap:1.5rem}
+  .mm-foot .btn{width:100%;justify-content:center;padding-block:1.15rem}
+  .mm-contact{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  .mm-phone{font-weight:600;letter-spacing:.04em;color:var(--ink);font-size:.95rem}
+  .mm-social{display:flex;gap:.6rem}
+  .mm-social a{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--ink-soft);transition:all .3s ease}
+  .mm-social a:hover{background:var(--ember);border-color:var(--ember);color:#fff}
+  .mm-social svg{width:17px;height:17px}
+  .mobile-menu .mm-links a,.mobile-menu .mm-foot{opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease}
+  .mobile-menu.open .mm-links a,.mobile-menu.open .mm-foot{opacity:1;transform:none}
+  .mobile-menu.open .mm-links a:nth-child(1){transition-delay:.06s}
+  .mobile-menu.open .mm-links a:nth-child(2){transition-delay:.12s}
+  .mobile-menu.open .mm-links a:nth-child(3){transition-delay:.18s}
+  .mobile-menu.open .mm-links a:nth-child(4){transition-delay:.24s}
+  .mobile-menu.open .mm-links a:nth-child(5){transition-delay:.30s}
+  .mobile-menu.open .mm-foot{transition-delay:.36s}
 
   /* hero — video, centered, no buttons */
   .hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
@@ -279,9 +297,13 @@
     .intro-grid{grid-template-columns:1fr;gap:2.4rem}
     .intro-media{order:-1}
     .reveal.from-left,.reveal.from-right{transform:translateY(34px)} /* avoid horizontal slide on mobile */
-    .dest-tabs{flex-direction:row;flex-wrap:wrap;gap:.6rem 1.6rem;align-items:flex-start;text-align:left}
-    .dest-tab.active::after{bottom:-2px}
-    .dest-foot{align-items:flex-start;gap:1.8rem}
+    .dest-ui{padding-top:112px}
+    .dest-foot{flex-direction:column;align-items:flex-start;gap:1.6rem}
+    .dest-tabs{order:-1;flex-direction:row;flex-wrap:wrap;gap:.5rem 1.4rem;align-items:flex-start;text-align:left;width:100%}
+    .dest-tab{font-size:1.3rem}
+    .dest-tab::after{left:0;right:auto}
+    .dest-tab.active::after{width:30px;bottom:-2px}
+    .dest-capbox{min-width:0;width:100%}
     .foot-grid{grid-template-columns:1fr 1fr}
     .foot-brand{grid-column:1/-1}
     .why-item{padding-right:1.4rem}
@@ -295,8 +317,8 @@
   @media (max-width:560px){
     body{font-size:16px}
     .fleet-grid{grid-template-columns:1fr;gap:2.6rem}
-    .dest-ui{padding-top:96px;padding-bottom:34px}
-    .dest-capbox{min-height:230px}
+    .dest-ui{padding-top:92px;padding-bottom:36px}
+    .dest-capbox{min-height:300px}
     .dest-cap p{font-size:.96rem}
     .foot-grid{grid-template-columns:1fr;gap:2rem}
     .foot-bottom{flex-direction:column}
@@ -335,12 +357,24 @@
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#fleet">Fleet</a>
-  <a href="#destinations">Destinations</a>
-  <a href="#partners">Work with us</a>
-  <a href="#story">About</a>
-  <a href="#contact">Contact</a>
-  <a class="btn btn--primary" href="#contact">Plan your voyage</a>
+  <nav class="mm-links">
+    <a href="#fleet">Fleet</a>
+    <a href="#destinations">Destinations</a>
+    <a href="#partners">Work with us</a>
+    <a href="#story">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="mm-foot">
+    <a class="btn btn--primary" href="#contact">Plan your voyage</a>
+    <div class="mm-contact">
+      <a class="mm-phone" href="tel:+6281219943006">+62 812 1994 3006</a>
+      <div class="mm-social">
+        <a href="https://www.instagram.com/floresrunaway/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/floresrunaway/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H8v3h3v7h3v-7h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5Z"/></svg></a>
+        <a href="https://wa.me/6281219943006" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 13.9c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.7-1.2-4.5-4-4.6-4.2-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4 0 .5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.2.1.4.2.5.3.1.2.1.6-.1 1.1Z"/></svg></a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -641,6 +675,7 @@
     document.body.classList.toggle('menu-open', open);
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
   // Lenis smooth scroll
   let lenis = null;
