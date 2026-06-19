@@ -142,12 +142,26 @@
   .fleet-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap}
   .fleet-head h2{margin-top:1rem}
   .fleet-head .lead{margin-top:.9rem}
-  .filters{display:flex;flex-wrap:wrap;gap:1.4rem 1.8rem;margin:2.8rem 0 2.6rem;border-bottom:1px solid var(--line)}
+  .filters{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.1rem 1.8rem;margin:2.8rem 0 2.6rem;border-bottom:1px solid var(--line)}
+  .chips{display:flex;flex-wrap:wrap;gap:1.4rem 1.8rem}
   .chip{background:none;border:0;cursor:pointer;font-family:"Hanken Grotesk";font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-soft);padding:0 0 1rem;position:relative;transition:color .3s ease}
   .chip::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1.5px;background:var(--ember);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
   .chip:hover{color:var(--ink)}
   .chip.active{color:var(--ink)}
   .chip.active::after{transform:scaleX(1)}
+  /* fleet search */
+  .fleet-search{position:relative;display:flex;align-items:center;gap:.55rem;padding-bottom:1rem}
+  .fleet-search svg{width:16px;height:16px;color:var(--ink-soft);flex:none;transition:color .3s ease}
+  .fleet-search input{border:0;background:none;outline:none;font-family:"Hanken Grotesk",sans-serif;font-size:.85rem;letter-spacing:.02em;color:var(--ink);width:170px;padding:0}
+  .fleet-search input::placeholder{color:var(--ink-soft);opacity:.85}
+  .fleet-search input::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}
+  .fleet-search::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1.5px;background:var(--ember);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+  .fleet-search:focus-within svg{color:var(--ember)}
+  .fleet-search:focus-within::after{transform:scaleX(1)}
+  .fleet-empty{margin-top:.6rem;color:var(--ink-soft);font-weight:300;font-size:1rem}
+  .fleet-empty[hidden]{display:none}
+  .fleet-clear{background:none;border:0;cursor:pointer;font-family:"Hanken Grotesk",sans-serif;font-weight:600;color:var(--ember);font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;padding:0;margin-left:.25rem}
+  .fleet-clear:hover{color:var(--ember-deep)}
   .fleet-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:3rem 2.4rem}
   .boat{display:flex;flex-direction:column;gap:1.1rem}
   .boat.is-hidden{display:none}
@@ -168,6 +182,26 @@
   .boat-foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:1.1rem;border-top:1px solid var(--line)}
   .price{font-size:.82rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.08em}
   .price b{font-family:"Fraunces";font-weight:400;font-size:1.2rem;color:var(--ink);letter-spacing:0;text-transform:none}
+
+  /* ============================================================
+     FLEET BADGES — featured / highly requested / central agent …
+     Drop a .badges block as the FIRST child of .boat-media.
+     Classes: badge--featured · badge--requested · badge--central
+              · badge--value · badge--new · badge--limited
+     ============================================================ */
+  .badges{position:absolute;top:14px;left:14px;z-index:3;display:flex;flex-wrap:wrap;gap:.5rem;max-width:calc(100% - 28px)}
+  .badge{display:inline-flex;align-items:center;gap:.45rem;height:28px;padding:0 .7rem;font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;line-height:1;white-space:nowrap;border-radius:2px;-webkit-backdrop-filter:blur(10px) saturate(150%);backdrop-filter:blur(10px) saturate(150%);box-shadow:0 6px 18px -6px rgba(20,16,8,.45)}
+  .badge svg{width:12px;height:12px;flex:none}
+  .badge--featured{color:#fff;background:var(--ember);box-shadow:0 6px 18px -5px rgba(226,86,42,.55)}
+  .badge--requested{color:#fff;background:rgba(21,18,14,.55);border:1px solid rgba(255,255,255,.16)}
+  .badge--requested .pulse{width:6px;height:6px;border-radius:50%;background:#e7c98a;box-shadow:0 0 0 0 rgba(231,201,138,.7);animation:badgePulse 2.2s infinite}
+  .badge--central{color:var(--ink);background:rgba(255,255,255,.86);border:1px solid rgba(255,255,255,.6)}
+  .badge--central svg{color:var(--ember)}
+  .badge--value{color:var(--gold);background:rgba(255,251,242,.62);border:1px solid rgba(185,138,44,.5)}
+  .badge--new{color:var(--ink);background:rgba(255,255,255,.86);border:1px solid rgba(255,255,255,.6)}
+  .badge--new .pip{width:5px;height:5px;border-radius:50%;background:var(--ember)}
+  .badge--limited{color:#fff;background:rgba(60,30,18,.6);border:1px solid rgba(255,255,255,.16)}
+  @keyframes badgePulse{0%{box-shadow:0 0 0 0 rgba(231,201,138,.6)}70%{box-shadow:0 0 0 7px rgba(231,201,138,0)}100%{box-shadow:0 0 0 0 rgba(231,201,138,0)}}
 
   /* destinations — full screen */
   .dest-full{position:relative;min-height:100svh;overflow:hidden;color:#fff;display:flex;flex-direction:column}
@@ -314,6 +348,11 @@
     .split-panel::after{background:linear-gradient(0deg,rgba(15,12,8,.86) 0%,rgba(15,12,8,.2) 100%)}
     .split-reveal{max-height:240px;opacity:1}
   }
+  @media (max-width:620px){
+    .filters{align-items:stretch}
+    .fleet-search{width:100%;padding-top:.2rem}
+    .fleet-search input{flex:1;width:auto}
+  }
   @media (max-width:560px){
     body{font-size:16px}
     .fleet-grid{grid-template-columns:1fr;gap:2.6rem}
@@ -429,16 +468,28 @@
     </div>
 
     <div class="filters reveal" id="filters">
-      <button class="chip active" data-filter="all">All boats</button>
-      <button class="chip" data-filter="phinisi">Phinisi</button>
-      <button class="chip" data-filter="yacht">Superyacht</button>
-      <button class="chip" data-filter="catamaran">Catamaran</button>
-      <button class="chip" data-filter="day">Day trips</button>
+      <div class="chips">
+        <button class="chip active" data-filter="all">All boats</button>
+        <button class="chip" data-filter="phinisi">Phinisi</button>
+        <button class="chip" data-filter="yacht">Superyacht</button>
+        <button class="chip" data-filter="catamaran">Catamaran</button>
+        <button class="chip" data-filter="day">Day trips</button>
+      </div>
+      <label class="fleet-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2" stroke-linecap="round"/></svg>
+        <input type="search" id="fleetSearch" placeholder="Search the fleet…" aria-label="Search the fleet" autocomplete="off" />
+      </label>
     </div>
 
     <div class="fleet-grid" id="fleetGrid">
       <article class="boat reveal" data-type="phinisi">
-        <div class="boat-media fx-img"><img src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=1000&q=80" alt="Senja phinisi" onerror="this.style.display='none'" /></div>
+        <div class="boat-media fx-img">
+          <div class="badges">
+            <span class="badge badge--featured">Featured</span>
+            <span class="badge badge--central"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Central Agent</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=1000&q=80" alt="Senja phinisi" onerror="this.style.display='none'" />
+        </div>
         <div class="boat-overline"><span class="type">Phinisi</span><span class="dot"></span><span>Komodo · 4D / 3N</span></div>
         <h3 class="boat-name"><a href="#contact">Samara II</a></h3>
         <p class="boat-desc">Our flagship phinisi, hand-built in South Sulawesi. Grand sun decks, a day club and a salon — space to make a week at sea feel endless.</p>
@@ -449,14 +500,19 @@
       <article class="boat reveal" data-type="yacht">
         <div class="boat-media fx-img"><img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1000&q=80" alt="Samudra Biru superyacht" onerror="this.style.display='none'" /></div>
         <div class="boat-overline"><span class="type">Superyacht</span><span class="dot"></span><span>Flores · island-hopping</span></div>
-        <h3 class="boat-name"><a href="#contact">Samudra Biru</a></h3>
+        <h3 class="boat-name"><a href="#contact">Mischief</a></h3>
         <p class="boat-desc">A sleek 38-metre motor yacht for travellers who want to cover more sea in less time, without losing an ounce of comfort.</p>
         <p class="boat-specs">38 m &nbsp;·&nbsp; 10 guests &nbsp;·&nbsp; 5 cabins &nbsp;·&nbsp; 11 crew</p>
         <div class="boat-foot"><span class="price">From <b>$6,500</b> / night</span><a class="arrow" href="#contact">View <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M0 6h22M17 1l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
       </article>
 
       <article class="boat reveal" data-type="phinisi">
-        <div class="boat-media fx-img"><img src="https://images.unsplash.com/photo-1502933691298-84fc14542831?auto=format&fit=crop&w=1000&q=80" alt="Cahaya Laut phinisi" onerror="this.style.display='none'" /></div>
+        <div class="boat-media fx-img">
+          <div class="badges">
+            <span class="badge badge--requested"><span class="pulse"></span>Highly Requested</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1502933691298-84fc14542831?auto=format&fit=crop&w=1000&q=80" alt="Cahaya Laut phinisi" onerror="this.style.display='none'" />
+        </div>
         <div class="boat-overline"><span class="type">Phinisi</span><span class="dot"></span><span>Komodo · families & couples</span></div>
         <h3 class="boat-name"><a href="#contact">Samara I</a></h3>
         <p class="boat-desc">The original Samara — an intimate sailer with a warm crew and an easy rhythm, our most-loved boat for first-time charters.</p>
@@ -465,9 +521,14 @@
       </article>
 
       <article class="boat reveal" data-type="catamaran">
-        <div class="boat-media fx-img"><img src="https://images.unsplash.com/photo-1593351415075-3bac9f45c877?auto=format&fit=crop&w=1000&q=80" alt="Manta Voyager catamaran" onerror="this.style.display='none'" /></div>
+        <div class="boat-media fx-img">
+          <div class="badges">
+            <span class="badge badge--value">Best Value</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1593351415075-3bac9f45c877?auto=format&fit=crop&w=1000&q=80" alt="Manta Voyager catamaran" onerror="this.style.display='none'" />
+        </div>
         <div class="boat-overline"><span class="type">Catamaran</span><span class="dot"></span><span>Komodo · dive-focused</span></div>
-        <h3 class="boat-name"><a href="#contact">Manta Voyager</a></h3>
+        <h3 class="boat-name"><a href="#contact">Otium</a></h3>
         <p class="boat-desc">A stable 24-metre catamaran built for divers — wide dive deck, fast tenders, and direct lines to Manta Point.</p>
         <p class="boat-specs">24 m &nbsp;·&nbsp; 8 guests &nbsp;·&nbsp; 4 cabins &nbsp;·&nbsp; 6 crew</p>
         <div class="boat-foot"><span class="price">From <b>$2,200</b> / night</span><a class="arrow" href="#contact">View <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M0 6h22M17 1l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
@@ -476,7 +537,7 @@
       <article class="boat reveal" data-type="phinisi">
         <div class="boat-media fx-img"><img src="https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd?auto=format&fit=crop&w=1000&q=80" alt="Bintang Timur phinisi" onerror="this.style.display='none'" /></div>
         <div class="boat-overline"><span class="type">Phinisi</span><span class="dot"></span><span>Komodo · liveaboard diving</span></div>
-        <h3 class="boat-name"><a href="#contact">Bintang Timur</a></h3>
+        <h3 class="boat-name"><a href="#contact">Siloina I</a></h3>
         <p class="boat-desc">A classic 35-metre liveaboard with a dedicated dive master, camera table, and nitrox — built for serious underwater days.</p>
         <p class="boat-specs">35 m &nbsp;·&nbsp; 10 guests &nbsp;·&nbsp; 5 cabins &nbsp;·&nbsp; 10 crew</p>
         <div class="boat-foot"><span class="price">From <b>$3,600</b> / night</span><a class="arrow" href="#contact">View <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M0 6h22M17 1l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
@@ -485,12 +546,14 @@
       <article class="boat reveal" data-type="day">
         <div class="boat-media fx-img"><img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1000&q=80" alt="Ratu Komodo speedboat" onerror="this.style.display='none'" /></div>
         <div class="boat-overline"><span class="type">Day trip</span><span class="dot"></span><span>Padar · Pink Beach · 1 day</span></div>
-        <h3 class="boat-name"><a href="#contact">Ratu Komodo</a></h3>
+        <h3 class="boat-name"><a href="#contact">Siloina II</a></h3>
         <p class="boat-desc">A 14-metre speedboat for full-day runs out of Labuan Bajo — Padar's viewpoint, Pink Beach, and the dragons of Rinca by lunch.</p>
         <p class="boat-specs">14 m &nbsp;·&nbsp; 12 guests &nbsp;·&nbsp; day charter &nbsp;·&nbsp; 4 crew</p>
         <div class="boat-foot"><span class="price">From <b>$850</b> / day</span><a class="arrow" href="#contact">View <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M0 6h22M17 1l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
       </article>
     </div>
+
+    <p class="fleet-empty" id="fleetEmpty" hidden>No boats match that search — <button type="button" class="fleet-clear" id="fleetClear">clear filters</button></p>
   </div>
 </section>
 
@@ -734,19 +797,55 @@
   else window.addEventListener('scroll', () => onScrollFx(window.scrollY), { passive: true });
   onScrollFx(window.scrollY || 0);
 
-  // fleet filters
+  // fleet filters + search (category chips AND text query combined)
   const chips = document.querySelectorAll('.chip');
-  const cards = document.querySelectorAll('#fleetGrid .boat');
+  const cards = Array.from(document.querySelectorAll('#fleetGrid .boat'));
+  const fleetSearch = document.getElementById('fleetSearch');
+  const fleetEmpty = document.getElementById('fleetEmpty');
+  const fleetClear = document.getElementById('fleetClear');
+  let activeCat = 'all';
+  let query = '';
+
+  // cache searchable text per card (name, type, location, description, specs, badges)
+  cards.forEach(card => { card._text = (card.textContent || '').toLowerCase().replace(/\s+/g, ' '); });
+
+  const applyFleet = (animate) => {
+    let visible = 0;
+    cards.forEach(card => {
+      const catOk = (activeCat === 'all' || card.dataset.type === activeCat);
+      const qOk = (!query || card._text.indexOf(query) !== -1);
+      const show = catOk && qOk;
+      card.classList.toggle('is-hidden', !show);
+      if (show) {
+        visible++;
+        if (animate) { card.classList.remove('is-anim'); void card.offsetWidth; card.classList.add('is-anim'); }
+      }
+    });
+    if (fleetEmpty) fleetEmpty.hidden = visible > 0;
+  };
+
   chips.forEach(chip => chip.addEventListener('click', () => {
     chips.forEach(c => c.classList.remove('active'));
     chip.classList.add('active');
-    const f = chip.dataset.filter;
-    cards.forEach(card => {
-      const show = (f === 'all' || card.dataset.type === f);
-      card.classList.toggle('is-hidden', !show);
-      if (show) { card.classList.remove('is-anim'); void card.offsetWidth; card.classList.add('is-anim'); }
-    });
+    activeCat = chip.dataset.filter;
+    applyFleet(true);
   }));
+
+  if (fleetSearch) {
+    fleetSearch.addEventListener('input', () => {
+      query = fleetSearch.value.trim().toLowerCase();
+      applyFleet(false);
+    });
+  }
+  if (fleetClear) {
+    fleetClear.addEventListener('click', () => {
+      query = ''; activeCat = 'all';
+      if (fleetSearch) fleetSearch.value = '';
+      chips.forEach(c => c.classList.toggle('active', c.dataset.filter === 'all'));
+      applyFleet(true);
+      if (fleetSearch) fleetSearch.focus();
+    });
+  }
 
   // destinations crossfade
   const tabs = document.querySelectorAll('.dest-tab');
