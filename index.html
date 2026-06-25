@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Flores Runaway — Run Away to the Flores Sea</title>
+<title>Boutique Yachts — Run Away to the Flores Sea</title>
 <meta name="description" content="Private boat & yacht charters across Komodo, Flores and Raja Ampat. One agency, a curated fleet of phinisi, superyachts and catamarans." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,8 +12,9 @@
 
 <style>
   :root{
-    --paper:#ffffff;--bone:#f7f4ee;--bone-2:#efe9df;--ink:#191613;--ink-soft:#6c645a;
-    --line:#e9e1d4;--ember:#e2562a;--ember-deep:#c8481f;--gold:#b98a2c;--char:#15120e;
+    --paper:#ffffff;--bone:#f5f7fa;--bone-2:#e9eef4;--ink:#0c1a2e;--ink-soft:#54637a;
+    --line:#e3e9f1;--ember:#b8902f;--ember-deep:#9c7726;--gold:#b8902f;--char:#06182f;
+    --navy:#0e2747;--navy-deep:#091d38;
     --gutter:clamp(20px,4.5vw,60px); --maxw:1340px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -21,7 +22,7 @@
   body{font-family:"Hanken Grotesk",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.8;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   img{display:block;max-width:100%}
   a{color:inherit;text-decoration:none}
-  ::selection{background:var(--ember);color:#fff}
+  ::selection{background:var(--navy);color:#fff}
 
   html.lenis,html.lenis body{height:auto}
   .lenis.lenis-smooth{scroll-behavior:auto!important}
@@ -50,8 +51,8 @@
 
   .btn{display:inline-flex;align-items:center;gap:.7rem;cursor:pointer;white-space:nowrap;font-family:"Hanken Grotesk";font-weight:600;font-size:.76rem;text-transform:uppercase;letter-spacing:.16em;padding:1.05rem 2rem;border-radius:2px;border:1px solid transparent;transition:transform .3s ease,background .3s ease,color .3s ease,border-color .3s ease}
   .btn svg{width:20px;height:10px}
-  .btn--primary{background:var(--ember);color:#fff}
-  .btn--primary:hover{background:var(--ember-deep);transform:translateY(-2px)}
+  .btn--primary{background:var(--navy);color:#fff}
+  .btn--primary:hover{background:var(--navy-deep);transform:translateY(-2px)}
   .btn--light{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
   .btn--light:hover{background:#fff;color:var(--ink);border-color:#fff}
 
@@ -103,9 +104,9 @@
 
   /* hero — video, centered, no buttons */
   .hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
-  .hero-bg{position:absolute;top:-12%;left:0;right:0;height:124%;background:linear-gradient(160deg,#27343a,#46585c);will-change:transform}
+  .hero-bg{position:absolute;top:-12%;left:0;right:0;height:124%;background:linear-gradient(160deg,#0e2747,#1d3a5f);will-change:transform}
   .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-  .hero-bg::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(20,18,15,.5) 0%,rgba(20,18,15,.2) 42%,rgba(20,18,15,.6) 100%)}
+  .hero-bg::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(6,16,30,.5) 0%,rgba(6,16,30,.2) 42%,rgba(6,16,30,.6) 100%)}
   .hero-inner{position:relative;z-index:2;color:#fff;padding-top:90px;display:flex;flex-direction:column;align-items:center}
   .hero .eyebrow{color:#e7c98a}
   .hero .eyebrow::before,.hero .eyebrow.c::after{background:#e7c98a;opacity:.85}
@@ -135,7 +136,7 @@
   .intro-list .k{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
   .intro-list .v{color:var(--ink-soft);font-weight:300;font-size:.98rem;line-height:1.65}
   .intro-list .v b{font-family:"Hanken Grotesk";font-weight:600;color:var(--ink)}
-  .intro-media .ph{aspect-ratio:4/5;overflow:hidden;border-radius:3px;background:linear-gradient(160deg,#e7e3da,#d6dcd9)}
+  .intro-media .ph{aspect-ratio:4/5;overflow:hidden;border-radius:3px;background:linear-gradient(160deg,#e8ecf2,#d8e0ea)}
   .intro-media .ph img{width:100%;height:100%;object-fit:cover}
 
   /* fleet */
@@ -167,7 +168,7 @@
   .boat.is-hidden{display:none}
   .boat.is-anim{animation:cardIn .55s cubic-bezier(.16,.7,.2,1) both}
   @keyframes cardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-  .boat-media{position:relative;aspect-ratio:4/3;border-radius:3px;background:linear-gradient(160deg,#e7e3da,#d6dcd9)}
+  .boat-media{position:relative;aspect-ratio:4/3;border-radius:3px;background:linear-gradient(160deg,#e8ecf2,#d8e0ea)}
   .boat-media img{width:100%;height:100%;object-fit:cover}
   .boat:hover .fx-img img{transform:scale(1.05)}
   .boat-overline{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
@@ -190,26 +191,26 @@
               · badge--value · badge--new · badge--limited
      ============================================================ */
   .badges{position:absolute;top:14px;left:14px;z-index:3;display:flex;flex-wrap:wrap;gap:.5rem;max-width:calc(100% - 28px)}
-  .badge{display:inline-flex;align-items:center;gap:.45rem;height:28px;padding:0 .7rem;font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;line-height:1;white-space:nowrap;border-radius:2px;-webkit-backdrop-filter:blur(10px) saturate(150%);backdrop-filter:blur(10px) saturate(150%);box-shadow:0 6px 18px -6px rgba(20,16,8,.45)}
+  .badge{display:inline-flex;align-items:center;gap:.45rem;height:28px;padding:0 .7rem;font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;line-height:1;white-space:nowrap;border-radius:2px;-webkit-backdrop-filter:blur(10px) saturate(150%);backdrop-filter:blur(10px) saturate(150%);box-shadow:0 6px 18px -6px rgba(6,16,30,.45)}
   .badge svg{width:12px;height:12px;flex:none}
-  .badge--featured{color:#fff;background:var(--ember);box-shadow:0 6px 18px -5px rgba(226,86,42,.55)}
-  .badge--requested{color:#fff;background:rgba(21,18,14,.55);border:1px solid rgba(255,255,255,.16)}
+  .badge--featured{color:var(--char);background:var(--gold);box-shadow:0 6px 18px -5px rgba(184,144,47,.5)}
+  .badge--requested{color:#fff;background:rgba(6,16,30,.55);border:1px solid rgba(255,255,255,.16)}
   .badge--requested .pulse{width:6px;height:6px;border-radius:50%;background:#e7c98a;box-shadow:0 0 0 0 rgba(231,201,138,.7);animation:badgePulse 2.2s infinite}
   .badge--central{color:var(--ink);background:rgba(255,255,255,.86);border:1px solid rgba(255,255,255,.6)}
   .badge--central svg{color:var(--ember)}
-  .badge--value{color:var(--gold);background:rgba(255,251,242,.62);border:1px solid rgba(185,138,44,.5)}
+  .badge--value{color:var(--gold);background:rgba(245,247,250,.62);border:1px solid rgba(184,144,47,.5)}
   .badge--new{color:var(--ink);background:rgba(255,255,255,.86);border:1px solid rgba(255,255,255,.6)}
   .badge--new .pip{width:5px;height:5px;border-radius:50%;background:var(--ember)}
-  .badge--limited{color:#fff;background:rgba(60,30,18,.6);border:1px solid rgba(255,255,255,.16)}
+  .badge--limited{color:#fff;background:rgba(6,16,30,.6);border:1px solid rgba(255,255,255,.16)}
   @keyframes badgePulse{0%{box-shadow:0 0 0 0 rgba(231,201,138,.6)}70%{box-shadow:0 0 0 7px rgba(231,201,138,0)}100%{box-shadow:0 0 0 0 rgba(231,201,138,0)}}
 
   /* destinations — full screen */
   .dest-full{position:relative;min-height:100svh;overflow:hidden;color:#fff;display:flex;flex-direction:column}
-  .dest-layer{position:absolute;inset:0;z-index:0;opacity:0;transition:opacity 1s ease;background:linear-gradient(160deg,#23303a,#3a4e54)}
+  .dest-layer{position:absolute;inset:0;z-index:0;opacity:0;transition:opacity 1s ease;background:linear-gradient(160deg,#0e2747,#1d3a5f)}
   .dest-layer.active{opacity:1}
   .dest-layer img{width:100%;height:100%;object-fit:cover;transform:scale(1.05);transition:transform 9s ease}
   .dest-layer.active img{transform:scale(1.15)}
-  .dest-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(15,12,8,.72) 0%,rgba(15,12,8,.28) 42%,rgba(15,12,8,0) 72%),linear-gradient(0deg,rgba(15,12,8,.66),rgba(15,12,8,0) 48%)}
+  .dest-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(6,16,30,.72) 0%,rgba(6,16,30,.28) 42%,rgba(6,16,30,0) 72%),linear-gradient(0deg,rgba(6,16,30,.66),rgba(6,16,30,0) 48%)}
   .dest-ui{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:space-between;width:100%;max-width:var(--maxw);margin-inline:auto;padding:clamp(112px,15vh,158px) var(--gutter) clamp(46px,7vh,80px)}
   .dest-top .eyebrow{color:#e7c98a}
   .dest-top .eyebrow::before{background:#e7c98a;opacity:.85}
@@ -234,11 +235,11 @@
   .split{display:flex;gap:14px;margin-top:3.4rem;min-height:560px}
   .split-panel{position:relative;flex:1;overflow:hidden;border-radius:4px;display:flex;align-items:flex-end;color:#fff;transition:flex-grow .65s cubic-bezier(.2,.7,.2,1),opacity 1.05s cubic-bezier(.16,.7,.2,1),transform 1.05s cubic-bezier(.16,.7,.2,1)}
   .split-panel:hover,.split-panel:focus-visible,.split-panel.is-open{flex-grow:2}
-  .split-panel .bg{position:absolute;inset:0;background:linear-gradient(160deg,#23303a,#3a4e54)}
+  .split-panel .bg{position:absolute;inset:0;background:linear-gradient(160deg,#0e2747,#1d3a5f)}
   .split-panel .bg img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
   .split-panel:hover .bg img{transform:scale(1.06)}
-  .split-panel::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,12,8,.84) 0%,rgba(15,12,8,.18) 55%,rgba(15,12,8,.35) 100%);transition:background .5s ease}
-  .split-panel:hover::after{background:linear-gradient(0deg,rgba(15,12,8,.88) 0%,rgba(15,12,8,.1) 62%,rgba(15,12,8,.2) 100%)}
+  .split-panel::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,16,30,.84) 0%,rgba(6,16,30,.18) 55%,rgba(6,16,30,.35) 100%);transition:background .5s ease}
+  .split-panel:hover::after{background:linear-gradient(0deg,rgba(6,16,30,.88) 0%,rgba(6,16,30,.1) 62%,rgba(6,16,30,.2) 100%)}
   .split-content{position:relative;z-index:2;padding:clamp(26px,3vw,46px);max-width:540px}
   .split-content .eyebrow{color:#e7c98a}
   .split-content .eyebrow::before{background:#e7c98a;opacity:.85}
@@ -254,7 +255,7 @@
   .why-dark{position:relative;overflow:hidden;background:var(--char);isolation:isolate;color:#f3efe8}
   .why-bg{position:absolute;top:-12%;left:0;right:0;height:124%;z-index:-2;will-change:transform}
   .why-bg img{width:100%;height:100%;object-fit:cover}
-  .why-dark::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(12,10,8,.72) 0%,rgba(12,10,8,.8) 50%,rgba(12,10,8,.88) 100%)}
+  .why-dark::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,16,30,.72) 0%,rgba(6,16,30,.8) 50%,rgba(6,16,30,.88) 100%)}
   .why-dark .eyebrow{color:#e7c98a}
   .why-dark .eyebrow::before{background:#e7c98a;opacity:.85}
   .why-dark .display{color:#fff}
@@ -279,9 +280,9 @@
 
   /* cta */
   .cta-band{position:relative;overflow:hidden;background:var(--char);isolation:isolate}
-  .cta-bg{position:absolute;top:-12%;left:0;right:0;height:124%;z-index:-2;background:linear-gradient(160deg,#23303a,#3a4e54);will-change:transform}
+  .cta-bg{position:absolute;top:-12%;left:0;right:0;height:124%;z-index:-2;background:linear-gradient(160deg,#0e2747,#1d3a5f);will-change:transform}
   .cta-bg img{width:100%;height:100%;object-fit:cover;opacity:.42}
-  .cta-band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(21,18,14,.5),rgba(21,18,14,.78))}
+  .cta-band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,16,30,.5),rgba(6,16,30,.78))}
   .cta-inner{position:relative;text-align:center;color:#fff}
   .cta-inner .eyebrow{color:#e7c98a}
   .cta-inner .eyebrow::before,.cta-inner .eyebrow.c::after{background:#e7c98a;opacity:.85}
@@ -314,9 +315,9 @@
   .totop:hover{background:var(--ember);border-color:var(--ember);color:#fff;transform:translateY(-2px)}
   .totop svg{width:18px;height:18px}
 
-  .wa{position:fixed;right:clamp(18px,3vw,30px);bottom:clamp(18px,3vw,30px);z-index:50;width:58px;height:58px;border-radius:50%;background:var(--ember);display:grid;place-items:center;color:#fff;box-shadow:0 12px 32px rgba(226,86,42,.42),0 2px 8px rgba(0,0,0,.14);transform:scale(0);transition:transform .45s cubic-bezier(.2,1.3,.4,1),background .3s ease,box-shadow .3s ease}
+  .wa{position:fixed;right:clamp(18px,3vw,30px);bottom:clamp(18px,3vw,30px);z-index:50;width:58px;height:58px;border-radius:50%;background:var(--navy);display:grid;place-items:center;color:#fff;box-shadow:0 12px 32px rgba(14,39,71,.42),0 2px 8px rgba(0,0,0,.14);transform:scale(0);transition:transform .45s cubic-bezier(.2,1.3,.4,1),background .3s ease,box-shadow .3s ease}
   body.loaded .wa{transform:scale(1);transition-delay:.9s}
-  .wa:hover{background:var(--ember-deep);box-shadow:0 16px 40px rgba(226,86,42,.5)}
+  .wa:hover{background:var(--navy-deep);box-shadow:0 16px 40px rgba(14,39,71,.5)}
   .wa svg{width:30px;height:30px;position:relative;z-index:2}
   .wa::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--gold);animation:waPulse 2.8s ease-out infinite}
   @keyframes waPulse{0%{transform:scale(1);opacity:.65}70%{transform:scale(1.55);opacity:0}100%{opacity:0}}
@@ -345,7 +346,7 @@
   @media (max-width:760px){
     .split{flex-direction:column;min-height:0;gap:14px}
     .split-panel{flex:none;min-height:340px}
-    .split-panel::after{background:linear-gradient(0deg,rgba(15,12,8,.86) 0%,rgba(15,12,8,.2) 100%)}
+    .split-panel::after{background:linear-gradient(0deg,rgba(6,16,30,.86) 0%,rgba(6,16,30,.2) 100%)}
     .split-reveal{max-height:240px;opacity:1}
   }
   @media (max-width:620px){
@@ -379,8 +380,8 @@
 <!-- HEADER -->
 <header class="site-header" id="header">
   <nav class="nav wrap-wide">
-    <a class="brand" href="#top" aria-label="Flores Runaway home">
-      <img src="https://cdn-kmhoh.nitrocdn.com/rFRnztCybHxdNxUWBHjWcYNSdYnTYNuA/assets/images/optimized/rev-3c313d8/floresrunaway.com/wp-content/uploads/2020/12/03-Floresrunaway-Transparent-e1609419706531.png" alt="Flores Runaway — Legendary Journeys" />
+    <a class="brand" href="#top" aria-label="Boutique Yachts home">
+      <img src="data:image/png;base64,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" alt="Boutique Yachts — Legendary Journeys" />
     </a>
     <ul class="nav-links">
       <li><a href="#fleet">Fleet</a></li>
@@ -408,8 +409,8 @@
     <div class="mm-contact">
       <a class="mm-phone" href="tel:+6281219943006">+62 812 1994 3006</a>
       <div class="mm-social">
-        <a href="https://www.instagram.com/floresrunaway/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-        <a href="https://www.facebook.com/floresrunaway/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H8v3h3v7h3v-7h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5Z"/></svg></a>
+        <a href="https://www.instagram.com/boutiqueyachts/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/boutiqueyachts/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H8v3h3v7h3v-7h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5Z"/></svg></a>
         <a href="https://wa.me/6281219943006" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 13.9c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.7-1.2-4.5-4-4.6-4.2-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4 0 .5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.2.1.4.2.5.3.1.2.1.6-.1 1.1Z"/></svg></a>
       </div>
     </div>
@@ -441,7 +442,7 @@
     <div class="intro-copy">
       <p class="eyebrow reveal">The agency</p>
       <h2 class="display h-lg reveal">We don't <span class="lc">rent</span> boats.<br>We craft <span class="lc">the</span> voyage.</h2>
-      <p class="lead reveal">Founded in 2013 by Fresa and Marc, Flores Runaway was one of the first to open up Komodo by sea — taking travellers on unforgettable journeys by boat and by land ever since.</p>
+      <p class="lead reveal">Founded in 2013 by Fresa and Marc, Boutique Yachts was one of the first to open up Komodo by sea — taking travellers on unforgettable journeys by boat and by land ever since.</p>
       <p class="reveal">Tell us how you like to travel and we'll match you to the right boat, design the route, and handle every detail — from sunrise at Padar to the manta rays at Karang Makassar. Our mission is simple: to design the journey of a lifetime for you.</p>
       <div class="intro-list reveal">
         <div class="row"><span class="k">One contact</span><span class="v"><b>From enquiry to last anchor.</b> A single advisor who knows your trip inside out.</span></div>
@@ -630,7 +631,7 @@
   <div class="why-bg" id="whyBg"><img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=2000&q=80" alt="" onerror="this.style.display='none'" /></div>
   <div class="wrap-wide">
     <div class="reveal" style="max-width:780px">
-      <p class="eyebrow">Why Flores Runaway</p>
+      <p class="eyebrow">Why Boutique Yachts</p>
       <h2 class="display h-lg">What makes a journey <span class="lc">legendary</span></h2>
     </div>
     <div class="why-grid">
@@ -675,7 +676,7 @@
     <h2 class="display h-lg">Ready <span class="lc">to find</span> your boat?</h2>
     <p>Tell us your dates and what you're dreaming of. We'll come back with two or three vessels and a route built just for you — usually within a day.</p>
     <div class="cta-actions">
-      <a class="btn btn--primary" href="mailto:info@floresrunaway.com">Plan your voyage <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M0 6h22M17 1l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="btn btn--primary" href="mailto:info@boutiqueyachts.com">Plan your voyage <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M0 6h22M17 1l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a class="btn btn--light" href="https://wa.me/6281219943006" target="_blank" rel="noopener">Chat on WhatsApp</a>
     </div>
   </div>
@@ -686,11 +687,11 @@
   <div class="wrap-wide">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="https://cdn-kmhoh.nitrocdn.com/rFRnztCybHxdNxUWBHjWcYNSdYnTYNuA/assets/images/optimized/rev-3c313d8/floresrunaway.com/wp-content/uploads/2020/12/03-Floresrunaway-Transparent-e1609419706531.png" alt="Flores Runaway" />
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAA8CAYAAAFUXMUHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAEPNJREFUeNpiYKA32DY36z+IPrqmVIGa5jIhc54+eQumHz96dX/9tNT/MPHZjeH7gfg/umZ0MSB/PRA34LUEBj5//lEYmDWbEUnIAIg/EOFokDp/oEUCyIKMOFw2IbV+ZSFNggsEgIaDLC7AEjQNWMTuA7EDuiOxBS3JAGjIe1A84YojIH2e7qkWIIAGBhxaWfSf2mZiRPyjh68T8cRFAHoiAMUDoYhmQo+4799/zccTcfZAOVBekKc05ShQJQkiARYsYveheQXd8n4gBcoTE4HyC0B5BEgrQsVB+eoALNcDxQUJ+eQ/Cb5OoFrmoxQABBAjrmTMwsLMAMaszB+MvFoFh2yeXN4bDw/mzbMyHGD12WAFTLgkvnz5AS5rQewXz9/v90qexji3GXsaAuV/aBZlwFbwY6sskOWQyu4GfGLkZntQgeRATi2E7Bl8Yjj0GsACkFS9BHM91FPvh1xtB6sekDEZ+pGTiQExxSK25AZlz6eGpxooKV+RkmYCMk2KR2BtI3z2AATQsAEY9ciB5YX7gfWHA7QOYWBmZio09GyZMCR9t2V2xn+kylHgyOqS/4PdzVjrkY8fvsHZduF9Hz58+MowJD3y7dtPlMz26SPEI2unJP/fNDPdAEsJZYAl486HdTLJKCAMcPW8cJnHRISh+79+/XkB4qFvDH7pMy9gUbYf3RJg8zSRRMc7IOm9QLUmCqjTC42Vg6B2M4idWL0cayMT1qYG0o7oTWOofoIAqPcAkl4BLEoOUFL2/yezfe9AKKkQqLeQ22sCpOgn1Dz5Pyg6HWQmLfShj0ENWEiIoQfEqgV5HNSkwNYfRW6DAeUbkNSD8pQCrOeOpMYR1NcleZAK2sr9T2mSgmVYQqMAhMzH1zYjO7+Qmcfm4yuNiDGfWq1fUKwUUOp5pAoSnf5P7YAc0gAgALtWs9JADIQ3WR+gb2D7Bnrx6uoDqD2JP6jVo4gV8ShtERFB/MGr6Kqggoie9dC9eFafoH0DexQEY2aZSBx322xbt1Y2ELY7zWazmWTm+2aSlL9OR8LKw9lSmjFW4ZxZw1MH/nOPN2spKdvjjM1x2/dI2YGRrbtkWmNQiA/iDxcEKCS7ePTjufvTpbL8z9EVlpRfUAjC0FnGrDmYbM655V9tXrI5259YPfMzZtcHubSU+TvItu0M7pwxhs/YNvMk+S9JZXkhjiIr6y0FdehBK7L2y/+qkOKTv18A22htINg2JGU1TQbx+xLIEBN5GnFSXKOgeIfCSQFhm5yU32Efg4SnACRf1okXjreg8BTewzsVvnL0sbfDw6v6DWocbYyL480J4W5N+rjofHu672JnRlztzhZN+sVrXsdVeJ83gEDlesDUBCUExNCeDNsVG707CtXvaUE/AJBLsBrgRnxYufn1S1cN6O3tHeQZWNWmHcq2ilm7KAKlP8dtNgCsW2a58s5wwzpcsYCmgmG67xUntBdl1YgT4egTgVs7hWbqqw3SNUZolyCmpOlEKo57RY80Y9RABPDkUZoNqmeSICXaNqeuPloNCgecQjvrah8AMjdqUCsprZksPyCHDO8Ery6ucLD74AtyMZkYfUW6UXdm18JeukOC5JrpyHTzxHSq8AjKcIgdV7VIFOM14z8avHuM+BEREoULOv5VphFj2q7RibqwEwNKTuYg33GtxhHZRqda0RVD+II6hpjWnbsJ5DQ54mggf2omk9W1CqkzcScNeIIw2PEtKYQsgkpsPsSUfLWNif78aAAKNeAr+vsJa88jyvNUBg9JLOwsh6K/kH4dbFsF9EiUGCSHPmBhpDGiULOS8j/KpwDsXD9v00AUPyfd63wC4k9AMzDA0oaJBTXtUtSFBoQQSKipBEyIJBISUgcoYoPBpUKwACliBKnuACv+BvU3SJjIn6bhnv2ufTnOjtvYTgt+kmXVdn2Xe/f+/d57TimllMayIdb7Sk3TtKqH8iLSC+esd+b3LC3DyoUrT9KYI8nA8OvWvYHLgIxWv7y84RrRH58elvgLGsig1oWrT3PpkiYUGLbbvXq73WUdfgi6tLi+fXFxXePXnfbvrv79w4NmuqQJMaTT8ZjBGfPXvdlrz4y2e6+rf3u7qqfLmgRDOCPand6QhEgSBAxhvW6vki7ryWkqRDA2wy2NyZnxIqNpYEMgGzjIZjPF5ftbFpUg15bwZ768uj3Hn9zRvFSvey07lS1nM5pdXN6wpTEAboBE13UM8sqK+7tYjgadaao0ryr96rZikQDSYl7z5Xl+vGFeS9aoAHMecy2wDpBBNKQ0ceC4BNZZwD+vj0pJBDIEAUI43JzyAfNQg57WL956fFTHKiQIPbDtpbub9seXN8ucISa/1irdeR1k7HcxorYQlihLsEhdRNyQ2wZHxCdRJJMjIwf8/+Cki/GoM6mAVQ7z57gOOZxf6HGRbFLza0WmsoZowBqyJIE6A7W1tLZpeyqsa4J6G8GMUbRCC5jpAlL8KAba4eMuKK6Xx+7tioUhXlpVJzjR3kF/wPb3D3J4rdQBe9PZL4bEqeYQxQ1b07XLjipoEyPEr2YnZkNGUBNVgJgsFeVGvz9o3Xj0zgr5Q4XKgkrghs/upHSOTYBQldmnUUIEGXg4pCFRGMjcCXYg6N8S1cc+fRZ+qixIlx+H6j5l3qZUv64aY24EU0txMEQYXvAoHPQqYFe7RWLsqCgsDE1LHkmBMMhASdSpF0OfIbrdlDyd4+TzdTyoE7Aq5UxM9AYpFaTKFPDMiop3UwmzIoFOcOdX0euhDaEL6P0IFxUGdajrF4Gq0NFlZUGSIRYwhPQcV009R2+pHPe449gQUEmwOxroiupEhCM1uOj7WyGes1jEhO8sJDVuZsxFson0NEfpz5RiNuqcKWLnVInOn4T3UxPHPw2dhCSAHyp4ngjFkcM/kxKC9EucT00ZzH8uISofPJJEFcIjwOQ8qSeG+EBgXDXqlgZ4QXvEKYA5HlaGIEIAscFhpSW2IuRFLIWurU3cYwfvG2RO88wDLI2kGFIVUTLxz1U95LmoymBwgQxFLVSBfmEA57PCFLXEPoisKZ4FVAAkm1Zagm2UGp9zZBxVw001KvsZ6nMO0oKs4K7dQf98CD6JqSbJIOqwqvjcg9uhpPhowU8faV2LeH75xFQWbeEKCBjjNtoO4lymz04U7RAyPD6j2iAxbBoBzY+tHTLsjBAyIq+SYFJF2JrQ3FqoFps+2FuiDJmeMK/yErZEPb1Nn8/DVWJijIbIxUQZUpGMfpIBYYUNg5EORQvQ61K54vMRzyOPZ5COz+O8SxtjErUkAzUy3ga2OufRwZCLqivyHJBxq6jS1qTPKA29l16Tf0fAdfEJ1bSNL6WUYqU/ArR3PS2OFFG8Eva+mU9g5hOY6MWDsIngQfcwiXpYVHYSWUTQZSaLeBFMGlQQZSdBcA/iZkZZXEGYEQQPgukR79PzCWw/wWROzmTcHeslv0oqnerqTtKZzp960GQmqe6uf+/Ve69+75UhQ4ZmsabLdPj4Xi7Bn5QgLDY9NJkgUDwuJv09/P9zr35qmyEwtPQMIuiPR9tcEb3c55M/o2YOxXfJ4f9ZL/WA9fzNz1wzPIaWikEE/fbwfc4krCAxhfXy7a99LcW/fv6QfPhNXnKIsXjtyi8Uvtg1w2QoLpqJp/f8vHNMSPhecI86wEemF9/4yuFX9vz8In92do57usFBzT9/utc0w2RouRgEgVRnYBK/gCsvvfRW3eZMUjmT7udX6ffv7xbMUBmKg6bCmxDOgmtCm7JdQUobn9SHg+96mtyjL2+3et8J9SlRuYWwHpn4vfbA0EdZrnr9+u17lB14U23LsO6Dk6PfOzdu7VQC2iCyonjpYJxDGkTeVtbbKhMnG5IdRVEs2nRqnlzxbZRv+7wjpyrn+S0MeTO1yHUgcgRa26fOVJYE1wbuo8tGm/cC0NdUtuRXF6lcCuXE+NiKsyeCthntaUC+kdogqDDt0vzDaOuwxy80WS0+Wav0Wf74x5ruGY/vb+b4DS15onNeKb9+92G/A3958O4+69s49I5uFGo7mUwUX3nnG3uCelOdqjJOSIL5l1WDJ7W3hcmR92MoCUS2qwGNdUMGgoImVYmDxTu89QTTdKNpFbtpuvJ5v0kl7cJVRLSsokyGDbZo1/0QH0CEWEE7mXLEr+Z3puiTLgNNs1MaqYoF1MVgAvDmX/Lr6dNL9qQXexiIBuEryFbPfulfrswcRP+eddpCdaMync5F9uadB2uTMIeGxDs3NFKQkIzU5jXdaoOJSGiZ0qyOuvNj4qjKo837YI51P+bAsx2ACmk8TiY+jCea+Vib5hlXDcfa0WEiaPJcXDwpdDr/UeAuvy7stz/6YQgPt/v5my3OFCXYJy4vs/baB99FFn+JlI40CY4g8f3iTgW4xgo5WC7KZqY6YDImQp1JpaqPkdfU8vTVatkgE1KVd/Z1imGVdMgtjx1A0sm688nw0kzYdc5AaclGKM5C6rDemW4kYVvAu6vUp/SK2q2n49g5+FzYNERxAXq3RV5yGLbeDiyhTEqS6ifSpKzMgjkUy3MWxrAK8tjA5+YYj92ESqZSBec6fSnq7EKYhRaG+NzTlAmDP06xRTqiYkJa8zSy650gJDtiSRIoY7FB0gFx5EVTkkZZnf47A7VCeGe8E4Y8PEXYFfsh1DZxeoRfME9F0vOZxvithlXrZkAkMFxk6cgEtLkJ7aCosXcsCMJcgFMiNemYIzV9aS68WAoPUL8jpDRVIsGD7IbLazw/MhV1rscp6rqlWMVEfgIryN0rTVzS0al+x5CMgsEOsOq1wwwoGwSj2fAICldqI6zRif6jdgmXcyPgbJkaG7ipHZTXee+Eauyinqf4pPspSdJeGPeq5Pks4b0UMPAM+s5FvzkaR8kW6tJPlQDKsAiOrrlyBpGki8zVI9lQ8IzrbNTPHTmTGIp07NMY+7Q0wRc2+30cRno3lIl35LEkKdOeLJWCgWxc8oqzw8KnmjN09WNLTLE0UUrJGDuSdEpZtUpDt21JqwvpqIfGe2RopVYQ2TPCGYIM87/ZIG1IDvrkOmI5q6swEBpD1TEH9Kwog4BJiAkaHpulge8LbBRfVF/GgZhFMkJDS8AgGom6zTypheCRqJhh0/ab8N4IchfpeFU53ew8CI5ZMUgUudBl5iAVIz8OujaGQT2CfaQ871fCYOV1KhMy3aWYBuSneLcATFZ8ULFC2FgawJ84IjeveVca6nDdK6jgdRxCLfuBJYVrV3F2JD27Dw4VJ7nGlUg1cgZBh+yz0T2FaoAtodr4OoCqNfeqByaySHBHR/PmPblviDn2QqBWyXtnQ4J2z4oJKE/OjCYLQMTCIVIHEneadro4a+FU8VttzP7yerpK0rgP9evSrCCYFGsTMFZN8awiWzDCQUjUFsJwkSR2MdHLQXs3uC+DVJvEVCchDulowoivhaxfZY77jlJeb6Ddc5PQ6hozNIuBdqBakATMBtkAWAmqQrjAQUGMQQfB11QMIHm9ovRwZeLMei0JB5Hy1glSSQ2DLCaTHEAVcUIwRwYrwdBEwDPqUE9HIu7gIm8zddJqnQ1R0OCanBDpfy+vQF3NSionrShWXHn85yU9rxcRu7EKjCTZJxWVrQWViKRo0wccSBMpFUbqS8b8vDo6mor2l2GT3YirXtdi6owcDHlijILPUn8Jg42g0u1F2ieQJjOhA1I+8eUiLNUJQKqWwURH/J6howawOtGhUiWghV04PGyoaSn0rwAVZjV10dZX8oYRPRtWZRujfAH1KIoE8nD4pOM21A0ZMmTIkCFDhgxFSv8DJIKUnsjWoX4AAAAASUVORK5CYII=" alt="Boutique Yachts" />
         <p>Sailing Komodo and Raja Ampat since 2013 — one of the first to open up these waters, by sea and by land. Founded by Fresa &amp; Marc.</p>
         <div class="socials">
-          <a href="https://www.instagram.com/floresrunaway/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-          <a href="https://www.facebook.com/floresrunaway/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H8v3h3v7h3v-7h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5Z"/></svg></a>
+          <a href="https://www.instagram.com/boutiqueyachts/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/boutiqueyachts/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H8v3h3v7h3v-7h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5Z"/></svg></a>
           <a href="https://wa.me/6281219943006" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 13.9c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.7-1.2-4.5-4-4.6-4.2-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4 0 .5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.2.1.4.2.5.3.1.2.1.6-.1 1.1Z"/></svg></a>
         </div>
       </div>
@@ -704,11 +705,11 @@
       </div>
       <div class="foot-col foot-contact">
         <h4>Get in touch</h4>
-        <p>Jl. Tukad Badung IX No. 9<br>Renon, Denpasar Selatan<br>Denpasar, Bali 80234<br><br><a href="mailto:info@floresrunaway.com">info@floresrunaway.com</a><br><a href="tel:+6281219943006">+62 812 1994 3006</a></p>
+        <p>Jl. Tukad Badung IX No. 9<br>Renon, Denpasar Selatan<br>Denpasar, Bali 80234<br><br><a href="mailto:info@boutiqueyachts.com">info@boutiqueyachts.com</a><br><a href="tel:+6281219943006">+62 812 1994 3006</a></p>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Flores Runaway · Legendary Journeys</span>
+      <span>© 2026 Boutique Yachts · Legendary Journeys</span>
       <span><a href="#top">Privacy</a> · <a href="#top">Terms</a> · <a href="#top">Booking conditions</a></span>
     </div>
   </div>
@@ -718,7 +719,7 @@
 <button class="totop" id="toTop" aria-label="Back to top">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
-<a class="wa" href="https://wa.me/6281219943006?text=Hi%20Flores%20Runaway%2C%20I%27d%20love%20to%20plan%20a%20charter." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a class="wa" href="https://wa.me/6281219943006?text=Hi%20Boutique%20Yachts%2C%20I%27d%20love%20to%20plan%20a%20charter." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <span class="tip">Chat with us</span>
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 13.9c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.7-1.2-4.5-4-4.6-4.2-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4 0 .5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.2.1.4.2.5.3.1.2.1.6-.1 1.1Z"/></svg>
 </a>
